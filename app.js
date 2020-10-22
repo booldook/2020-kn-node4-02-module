@@ -30,8 +30,17 @@ app.get('/sample', (req, res, next) => {
 	// res.send('');
 	// res.sendFile('절대경로');
 	// res.redirect('/member');
-	res.render('./sample.pug');
+	res.render('./sample.pug', {title: "PUG 연습"});
 });
+
+app.get('/book', (req, res, next) => {
+	const pug = { books: [
+			{id: 1, title: "별주부전", content: "거북이가 간을..."},
+			{id: 2, title: "홍길동전", content: "아버지를 아버지라..."},
+			{id: 3, title: "심청전", content: "아버지 심청이가..."},
+		] };
+	res.render('./book.pug', pug);
+})
 
 app.use('/member', memberRouter);
 

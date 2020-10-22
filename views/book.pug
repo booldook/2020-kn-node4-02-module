@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+html(lang="ko")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title 도서리스트
+		link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+	body
+		.container
+			table.table
+				thead.thead-dark
+					tr
+						th 번호
+						th 제목
+						th 내용
+				tbody
+					each v in books
+						tr
+							td= v.id
+							td= v.title
+							td= v.content
+					//- 주석입니다.
